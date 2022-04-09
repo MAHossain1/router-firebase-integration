@@ -23,7 +23,14 @@ function App() {
           }
         ></Route>
         <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/products" element={<Products></Products>}></Route>
+        <Route
+          path="/products"
+          element={
+            <RequireAuth>
+              <Products></Products>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login></Login>}></Route>
       </Routes>
     </div>
